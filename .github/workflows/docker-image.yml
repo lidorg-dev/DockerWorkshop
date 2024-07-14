@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag lidorlg/dockerworkshop:$(date +%s)
+      run: docker build . --file Dockerfile --tag lidorlg/dockerworkshop:${{ github.run_number }}
 
     - name: push the Image
-      run: docker push lidorlg/dockerworkshop:$(date +%s)
+      run: docker push lidorlg/dockerworkshop:${{ github.run_number }}
